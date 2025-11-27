@@ -9,7 +9,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-64/_openmp_mutex-4.5-2_gnu.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-64/aom-3.9.1-hac33072_0.conda
-      - conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.3.11-pyh4616a5c_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/async-timeout-5.0.1-pyhd8ed1ab_1.conda
+      - conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.4-pyh4616a5c_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/attr-2.5.2-h39aace5_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/bzip2-1.0.8-hda65f42_8.conda
       - conda: https://prefix.dev/conda-forge/noarch/ca-certificates-2025.11.12-hbd8a1cb_0.conda
@@ -84,6 +85,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-64/sdl3-3.2.26-h68140b3_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/svt-av1-3.1.2-hecca717_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/tk-8.6.13-noxft_ha0e22de_103.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.15.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/wayland-1.24.0-h3e06ad9_0.conda
       - conda: https://prefix.dev/conda-forge/linux-64/xkeyboard-config-2.46-hb03c661_0.conda
@@ -105,7 +107,8 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/_openmp_mutex-4.5-2_gnu.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-aarch64/alsa-lib-1.2.14-h86ecc28_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/aom-3.9.1-hcccb83c_0.conda
-      - conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.3.11-pyh4616a5c_0.conda
+      - conda: https://prefix.dev/conda-forge/noarch/async-timeout-5.0.1-pyhd8ed1ab_1.conda
+      - conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.4-pyh4616a5c_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/attr-2.5.1-h4e544f5_1.tar.bz2
       - conda: https://prefix.dev/conda-forge/linux-aarch64/bzip2-1.0.8-h4777abc_8.conda
       - conda: https://prefix.dev/conda-forge/noarch/ca-certificates-2025.11.12-hbd8a1cb_0.conda
@@ -201,6 +204,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/linux-aarch64/sdl3-3.2.26-h506f210_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/svt-av1-3.1.2-hfae3067_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/tk-8.6.13-noxft_h561c983_103.conda
+      - conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.15.0-pyhcf101f3_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/wayland-1.24.0-h698ed42_0.conda
       - conda: https://prefix.dev/conda-forge/linux-aarch64/xkeyboard-config-2.46-he30d5cf_0.conda
@@ -280,14 +284,24 @@ packages:
   license_family: BSD
   size: 3250813
   timestamp: 1718551360260
-- conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.3.11-pyh4616a5c_0.conda
-  sha256: ec4d7224c7e78714c96bdeb9b254f6e0a31c45eaf871db488108ec2e7b71241e
+- conda: https://prefix.dev/conda-forge/noarch/async-timeout-5.0.1-pyhd8ed1ab_1.conda
+  sha256: 33d12250c870e06c9a313c6663cfbf1c50380b73dfbbb6006688c3134b29b45a
+  md5: 5d842988b11a8c3ab57fb70840c83d24
   depends:
-  - python >=3.11,<=3.14
-  - python *
-  license: MIT
-  size: 26585
-  timestamp: 1764230005238
+  - python >=3.9
+  license: Apache-2.0
+  license_family: Apache
+  size: 11763
+  timestamp: 1733235428203
+- conda: https://prefix.dev/motion-stack/noarch/asyncio_for_robotics-1.2.4-pyh4616a5c_0.conda
+  sha256: 8ec989d77f985d53ee5d1beb95c0f23b4ec918e99e6dd738abfe39b572b53673
+  depends:
+  - python
+  - typing_extensions
+  - async-timeout
+  - python
+  size: 346750
+  timestamp: 1764253700634
 - conda: https://prefix.dev/conda-forge/linux-64/attr-2.5.2-h39aace5_0.conda
   sha256: a9c114cbfeda42a226e2db1809a538929d2f118ef855372293bd188f71711c48
   md5: 791365c5f65975051e4e017b5da3abf5
@@ -553,13 +567,13 @@ packages:
   - gogo_keyboard
   - python >=3.10
   - python *
-  - asyncio_for_robotics >=1.2.3,<2
+  - asyncio_for_robotics >=1.2.4,<2
   - pysdl2 >=0.9.0
   - sdl2 >=2.0.0
   - sdl2_image >=2.0.0
   license: MIT
   input:
-    hash: 8a4249334ca51294f38e229acab4e07f9529ddec8ed299037468c6b25ebcabed
+    hash: 9e579809861ba6875bc246dd7e08c41fba4eb50cd847afdaf6f2471a08a3607d
     globs:
     - pyproject.toml
   sources:
@@ -2224,6 +2238,16 @@ packages:
   license_family: BSD
   size: 3333495
   timestamp: 1763059192223
+- conda: https://prefix.dev/conda-forge/noarch/typing_extensions-4.15.0-pyhcf101f3_0.conda
+  sha256: 032271135bca55aeb156cee361c81350c6f3fb203f57d024d7e5a1fc9ef18731
+  md5: 0caa1af407ecff61170c9437a808404d
+  depends:
+  - python >=3.10
+  - python
+  license: PSF-2.0
+  license_family: PSF
+  size: 51692
+  timestamp: 1756220668932
 - conda: https://prefix.dev/conda-forge/noarch/tzdata-2025b-h78e105d_0.conda
   sha256: 5aaa366385d716557e365f0a4e9c3fca43ba196872abbbe3d56bb610d131e192
   md5: 4222072737ccff51314b5ece9c7d6f5a
