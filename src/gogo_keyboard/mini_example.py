@@ -1,5 +1,5 @@
 import asyncio
-from gorillinput.keyboard import KeySub
+from gogo_keyboard.keyboard import KeySub
 
 async def async_main():
     key_sub = KeySub()

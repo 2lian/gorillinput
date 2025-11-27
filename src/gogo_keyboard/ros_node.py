@@ -7,7 +7,7 @@ import rclpy
 from rclpy.qos import DurabilityPolicy, HistoryPolicy, QoSProfile, ReliabilityPolicy
 from std_msgs.msg import String
 
-from gorillinput.keyboard import Key, KeySub
+from gogo_keyboard.keyboard import Key, KeySub
 
 
 def make_ros_msg(key: Key) -> String:

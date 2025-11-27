@@ -1,6 +1,6 @@
 [workspace] 
 channels = ["https://prefix.dev/conda-forge"]
-name = "gorillinput"
+name = "gogo_keyboard"
 platforms = ["win-64", "linux-64", "linux-aarch64", "osx-arm64", "osx-64"]
 preview = ["pixi-build"]
 
@@ -10,10 +10,10 @@ sdl2 = "*"
 sdl2_image = "*"
 
 [pypi-dependencies] 
-gorillinput = { path = "." , editable=true}
+gogo_keyboard = { path = "." , editable=true}
 
 [tasks] 
-start = "python3 -m gorillinput.example"
+start = "python3 -m gogo_keyboard.example"
 
 [environments]
 humble = { features = ["humble"] }
@@ -29,7 +29,7 @@ ros-humble-ros-core = "*"
 ros-humble-rmw-zenoh-cpp = "*"
 
 [feature.jazzy.tasks]
-node = "python3 -m gorillinput.ros_node"
+node = "python3 -m gogo_keyboard.ros_node"
 
 ### ROS Jazzy ####
 [feature.jazzy]
@@ -49,7 +49,7 @@ ros-kilted-rmw-zenoh-cpp = "*"
 
 
 # [package] 
-# name = "gorillinput"
+# name = "gogo_keyboard"
 # version = "0.0.0"
 #
 # [package.build] 

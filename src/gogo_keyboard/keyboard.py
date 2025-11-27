@@ -61,7 +61,7 @@ class KeySub(BaseSub[Key]):
 
         self._pressed_keys: Dict[int, Key] = dict()
         self._surface_icon = sdl2.ext.load_img(
-            str(files("gorillinput").joinpath("icons/gogo.png"))
+            str(files("gogo_keyboard").joinpath("icons/gogo.png"))
         )
         super().__init__()
         self.window: sdl2.ext.Window
@@ -69,24 +69,24 @@ class KeySub(BaseSub[Key]):
         self._init_sdl()
         self._sdl_thread: asyncio.Task = asyncio.create_task(self._sdl_loop())
 
-        print(str(files("gorillinput").joinpath("gogo.png")))
+        print(str(files("gogo_keyboard").joinpath("gogo.png")))
         self.texture_idle = sdl2.SDL_CreateTextureFromSurface(
             self.renderer.sdlrenderer,
             sdl2.ext.load_img(
-                str(files("gorillinput").joinpath("icons/gogo.png")),
+                str(files("gogo_keyboard").joinpath("icons/gogo.png")),
             ),
         )
         self.texture_loop = [
             sdl2.SDL_CreateTextureFromSurface(
                 self.renderer.sdlrenderer,
                 sdl2.ext.load_img(
-                    str(files("gorillinput").joinpath("icons/gogo_happy.png"))
+                    str(files("gogo_keyboard").joinpath("icons/gogo_happy.png"))
                 ),
             ),
             sdl2.SDL_CreateTextureFromSurface(
                 self.renderer.sdlrenderer,
                 sdl2.ext.load_img(
-                    str(files("gorillinput").joinpath("icons/gogo_happy2.png"))
+                    str(files("gogo_keyboard").joinpath("icons/gogo_happy2.png"))
                 ),
             ),
         ]

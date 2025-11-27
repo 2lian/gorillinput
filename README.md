@@ -4,8 +4,8 @@
 Python Asyncio library to simply get keyboard presses (up and down). Gogo Keyboard creates a new independent SDL2 window that captures the key presses. And it also works with ROS 2.
 
 ```python3
-pip install https://github.com/2lian/gorillinput.git[dll]
-python3 -m gorillinput.example
+pip install https://github.com/2lian/gogo_keyboard.git[dll]
+python3 -m gogo_keyboard.example
 ```
 
 Motivation:
@@ -30,13 +30,13 @@ Conda pacakge: soon!
 
 ## Python Example
 
-Example is [provided here](./src/gorillinput/example.py) and can be run with `python3 -m gorillinput.example`.
+Example is [provided here](./src/gogo_keyboard/example.py) and can be run with `python3 -m gogo_keyboard.example`.
 
 Here is a minimal piece of code:
 
 ```python
 import asyncio
-from gorillinput.keyboard import KeySub
+from gogo_keyboard.keyboard import KeySub
 
 async def async_main():
     key_sub = KeySub()
@@ -48,4 +48,4 @@ asyncio.run(async_main())
 
 ## ROS 2 Example (Humble, Jazzy, Kilted)
 
-A very simple ROS 2 node is [provided here](./src/gorillinput/ros_node.py) and can be run with `python3 -m gorillinput.ros_node`. You can listen to its output using `ros2 topic echo /key_press`. The messages format is a `json` formatted `String`, 🦍 simple 🦍  Unga Bunga.
+A very simple ROS 2 node is [provided here](./src/gogo_keyboard/ros_node.py) and can be run with `python3 -m gogo_keyboard.ros_node`. You can listen to its output using `ros2 topic echo /key_press`. The messages format is a `json` formatted `String`, 🦍 simple 🦍  Unga Bunga.
