@@ -1,8 +1,8 @@
 # Gogo Keyboard
 ## Press keyboard 🦍 Get key 🦍  Unga Bunga
 
-<!-- | Requirements | Compatibility | Tests | -->
-<!-- |---|---|---| -->
+| | | |
+|---|---|---|
 | ![python](./media/Screenshot1.png) | ![python](./media/Screenshot2.png) | ![python](./media/Screenshot3.png) |
 
 Python Asyncio library to simply get keyboard presses (up and down). Gogo Keyboard creates a new independent SDL2 window that captures the key presses.
