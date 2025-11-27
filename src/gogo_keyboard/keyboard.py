@@ -4,7 +4,7 @@ import copy
 import dataclasses
 import random
 from importlib.resources import files
-from typing import Any, Callable, Dict, Self, Tuple
+from typing import Any, Callable, Dict, Tuple
 
 import asyncio_for_robotics
 import sdl2
@@ -29,7 +29,7 @@ class Key:
     sdl_event: sdl2.SDL_KeyboardEvent
 
     @classmethod
-    def from_sdl(cls, sdl_event: sdl2.SDL_KeyboardEvent) -> Self:
+    def from_sdl(cls, sdl_event: sdl2.SDL_KeyboardEvent) -> "Key":
         return cls(
             symbol=sdl2.SDL_GetKeyName(sdl_event.keysym.sym).decode(),
             code=sdl_event.keysym.scancode,

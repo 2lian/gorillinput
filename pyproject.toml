@@ -3,11 +3,11 @@ name = "gogo_keyboard"
 version = "0.0.0"
 description = "Press keyboard 🦍 Get key 🦍 Python Asyncio for Robotics"
 readme = "README.md"
-license = { text = "MIT" }
+license = "MIT"
 authors = [
   { name = "Elian NEPPEL", email = "elian.dev@posteo.com" }
 ]
-requires-python = ">=3.10,<=3.14"
+requires-python = ">=3.10"
 keywords = ["asyncio", "robotics", "ros2", "zenoh", "publisher", "subscriber"]
 
 classifiers = [
@@ -26,14 +26,12 @@ classifiers = [
   "Operating System :: Microsoft :: Windows",
   "Operating System :: MacOS",
   "Topic :: Scientific/Engineering",
-  "Topic :: Software Development :: Embedded Systems",
-  "Topic :: System :: Networking",
   "Framework :: AsyncIO",
 ]
 
 dependencies = [
-    "asyncio_for_robotics>=1.0.0,<2.0.0",
-    "pysdl2>=0.9.0,<1.0.0",
+    "asyncio_for_robotics>=1.0.0",
+    "pysdl2>=0.9.0",
 ]
 
 [build-system]
@@ -42,16 +40,19 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.package-data]
 "gogo_keyboard" = [
-  "src/gogo_keyboard/py.typed",
+  "py.typed",
   "icons/gogo.png",
   "icons/gogo_happy.png",
   "icons/gogo_happy2.png",
 ]
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = [
+    "gogo_keyboard",
+]
 
 
-[tool.setuptools.packages.find]
-where = ["src"]
 
 [project.optional-dependencies]
 dll = ["pysdl2-dll"]

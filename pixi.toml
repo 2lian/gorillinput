@@ -1,62 +1,46 @@
 [workspace] 
-channels = ["https://prefix.dev/conda-forge"]
+channels = ["https://prefix.dev/conda-forge", "https://prefix.dev/motion-stack"]
 name = "gogo_keyboard"
-platforms = ["win-64", "linux-64", "linux-aarch64", "osx-arm64", "osx-64"]
+platforms = ["linux-64", "linux-aarch64"]
 preview = ["pixi-build"]
 
 [dependencies] 
 python = "*"
-sdl2 = "*"
-sdl2_image = "*"
-
-[pypi-dependencies] 
-gogo_keyboard = { path = "." , editable=true}
+gogo_keyboard = { path = "."}
 
 [tasks] 
 start = "python3 -m gogo_keyboard.example"
 
-[environments]
-humble = { features = ["humble"] }
-jazzy = { features = ["jazzy"] }
-kilted = { features = ["kilted"] }
-
-### ROS Humble ####
-[feature.humble]
-channels = ["https://prefix.dev/robostack-humble"]
-
-[feature.humble.dependencies]
-ros-humble-ros-core = "*"
-ros-humble-rmw-zenoh-cpp = "*"
-
-[feature.jazzy.tasks]
-node = "python3 -m gogo_keyboard.ros_node"
-
-### ROS Jazzy ####
-[feature.jazzy]
-channels = ["https://prefix.dev/robostack-jazzy"]
-
-[feature.jazzy.dependencies]
-ros-jazzy-ros-core = "*"
-ros-jazzy-rmw-zenoh-cpp = "*"
-
-### ROS Kilted ####
-[feature.kilted]
-channels = ["https://prefix.dev/robostack-kilted"]
-
-[feature.kilted.dependencies]
-ros-kilted-ros-core = "*"
-ros-kilted-rmw-zenoh-cpp = "*"
-
-
-# [package] 
-# name = "gogo_keyboard"
-# version = "0.0.0"
+# [environments]
+# jazzy = { features = ["jazzy"] }
 #
-# [package.build] 
-# backend = { name = "pixi-build-python", version = "==0.4.0" }
+# [feature.jazzy.tasks]
+# node = "python3 -m gogo_keyboard.ros_node"
 #
-# [package.host-dependencies] 
-# hatchling = "==1.26.3"
+# ### ROS Jazzy ####
+# [feature.jazzy]
+# channels = ["https://prefix.dev/robostack-jazzy"]
 #
-# [package.run-dependencies] 
-# rich = "13.9.*"
+# [feature.jazzy.dependencies]
+# ros-jazzy-ros-core = "*"
+# ros-jazzy-rmw-zenoh-cpp = "*"
+
+[package] 
+name = "gogo_keyboard"
+version = "0.0.0"
+
+[package.build] 
+backend = { name = "pixi-build-python", version = "==0.4.0" }
+
+[package.host-dependencies] 
+setuptools = ">=58.2.0"
+
+[package.run-dependencies] 
+gogo_keyboard = { path = "."}
+python = ">=3.10"
+asyncio_for_robotics = ">=1.2.3,<2"
+# asyncio_for_robotics = { path = "~/asyncio-for-robotics"}
+pysdl2 = ">=0.9.0"
+# pysdl2 = { path = "~/py-sdl2-conda-aarch"}
+sdl2 = ">=2.0.0"
+sdl2_image = ">=2.0.0"
